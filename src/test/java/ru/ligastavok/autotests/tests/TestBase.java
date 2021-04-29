@@ -4,8 +4,6 @@ import io.qameta.allure.junit5.AllureJunit5;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.extension.ExtendWith;
-import ru.ligastavok.autotests.helpers.AttachmentsHelper;
-import ru.ligastavok.autotests.helpers.DriverHelper;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static ru.ligastavok.autotests.helpers.AttachmentsHelper.*;
@@ -29,3 +27,4 @@ public class TestBase {
         closeWebDriver();
     }
 }
+

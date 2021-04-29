@@ -2,12 +2,12 @@ package ru.ligastavok.autotests.helpers;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import ru.ligastavok.autotests.config.DriverConfig;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import ru.ligastavok.autotests.config.DriverConfig;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -117,7 +117,6 @@ public class DriverHelper {
             capabilities.setCapability("enableVideo", true);
             Configuration.remote = getWebRemoteDriver();
         }
-        capabilities.merge(options);
         Configuration.browserCapabilities = capabilities;
     }
 }

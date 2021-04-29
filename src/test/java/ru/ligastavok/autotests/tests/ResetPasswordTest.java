@@ -16,7 +16,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @DisplayName("Reset password scenarios")
-class ResetPasswordTest {
+class ResetPasswordTest extends TestBase{
 
     MainPage mainPage = new MainPage();
     LoginPage loginPage = new LoginPage();
