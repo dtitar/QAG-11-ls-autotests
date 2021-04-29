@@ -15,5 +15,6 @@ public class LoginPage {
     public final SelenideElement passwordField = $("input[name=password]");
     public final SelenideElement submitButton = $("[class*=auth-form__submit]");
     public final SelenideElement authFormErrorNotification = $("[class*=auth-form__error]");
+    public final SelenideElement resetPasswordLink = $("a[href='/ResetPassword']");
 
 }

@@ -24,7 +24,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    @DisplayName("Сhecking for the presence of authorization form elements")
+    @DisplayName("Verifying for the presence of authorization form elements")
     void testLoginFormFields() {
         step("Open login page", () -> {
             open("");
