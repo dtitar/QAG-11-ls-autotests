@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import ru.ligastavok.autotests.config.DriverConfig;
+import ru.ligastavok.autotests.tests.TestData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -98,6 +99,7 @@ public class DriverHelper {
         Configuration.browser = getDriverConfig().webBrowser();
         Configuration.browserVersion = getDriverConfig().webBrowserVersion();
         Configuration.browserSize = getDriverConfig().webBrowserSize();
+        Configuration.baseUrl = TestData.getWebUrl();
         Configuration.timeout = 10000;
 
         ChromeOptions options = new ChromeOptions();
