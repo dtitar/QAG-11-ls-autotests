@@ -2,6 +2,7 @@ package ru.ligastavok.autotests.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -12,7 +13,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-@Story("Login tests")
+@DisplayName("Login scenarios")
 public class LoginTest extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -24,6 +25,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Verifying for the presence of authorization form elements")
     void testLoginFormFields() {
         step("Open login page", () -> {
@@ -53,6 +55,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Failed login with mobile phone with invalid credentials")
     void testUserLoginWithMobilePhoneFail() {
         Faker fake = new Faker();
@@ -77,6 +80,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Failed login with email with invalid credentials")
     void testUserLoginWithEmailFail() {
         Faker fake = new Faker();

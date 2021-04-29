@@ -2,6 +2,7 @@ package ru.ligastavok.autotests.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
+@DisplayName("Reset password scenarios")
 class ResetPasswordTest {
 
     MainPage mainPage = new MainPage();
@@ -26,6 +28,7 @@ class ResetPasswordTest {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Verifying presence of the reset password form elements")
     void testResetPasswordFormFields() {
 
@@ -64,6 +67,7 @@ class ResetPasswordTest {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Failed reset password with invalid mobile phone")
     void testResetPasswordFormWithMobilePhoneInvalidData() {
         Faker fake = new Faker();
@@ -86,6 +90,7 @@ class ResetPasswordTest {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Failed reset password with invalid email")
     void testResetPasswordFormWithEmailInvalidData() {
         Faker fake = new Faker();
@@ -110,6 +115,7 @@ class ResetPasswordTest {
     }
 
     @Test
+    @Owner("dtitar")
     @DisplayName("Reset password fields errors notifications")
     @Disabled("needs test case update")
     void testResetPasswordFormFieldsErrorNotifications() {
