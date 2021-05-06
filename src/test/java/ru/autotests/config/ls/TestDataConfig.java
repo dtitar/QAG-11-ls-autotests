@@ -1,11 +1,11 @@
-package ru.ligastavok.autotests.config;
+package ru.autotests.config.ls;
 
 import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
         "system:properties",
-        "classpath:config/testdata.properties"
+        "classpath:config/ls/testdata.properties"
 })
 public interface TestDataConfig extends Config {
     @Key("web.url")

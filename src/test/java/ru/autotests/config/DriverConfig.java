@@ -1,4 +1,4 @@
-package ru.ligastavok.autotests.config;
+package ru.autotests.config;
 
 import org.aeonbits.owner.Config;
 

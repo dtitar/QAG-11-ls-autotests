@@ -1,4 +1,4 @@
-package ru.ligastavok.autotests.tests;
+package ru.autotests.tests.ls;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
@@ -6,14 +6,17 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import ru.ligastavok.autotests.pages.LoginPage;
-import ru.ligastavok.autotests.pages.MainPage;
+import ru.autotests.pages.LoginPage;
+import ru.autotests.pages.MainPage;
+import ru.autotests.tests.TestBase;
+
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-@DisplayName("Login scenarios")
+@Story("Login scenarios")
 public class LoginTest extends TestBase {
 
     MainPage mainPage = new MainPage();
@@ -25,6 +28,7 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Verifying for the presence of authorization form elements")
     void testLoginFormFields() {
@@ -55,11 +59,12 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Failed login with mobile phone with invalid credentials")
     void testUserLoginWithMobilePhoneFail() {
         Faker fake = new Faker();
-        String expectedLoginErrorMessageText = "Неверно указано имя пользователя или пароль.";
+        String expectedLoginErrorMessageText = "Неверно указан номер телефона или пароль";
 
         step("Open login page", () -> {
             open("");
@@ -80,11 +85,12 @@ public class LoginTest extends TestBase {
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Failed login with email with invalid credentials")
     void testUserLoginWithEmailFail() {
         Faker fake = new Faker();
-        String expectedLoginErrorMessageText = "Неверно указано имя пользователя или пароль. Попробуйте авторизоваться, используя номер телефона.";
+        String expectedLoginErrorMessageText = "Неверно указан E-mail или пароль";
 
         step("Open login page", () -> {
             open("");

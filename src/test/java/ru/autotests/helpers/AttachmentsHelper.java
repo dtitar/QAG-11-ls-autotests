@@ -1,4 +1,4 @@
-package ru.ligastavok.autotests.helpers;
+package ru.autotests.helpers;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -10,9 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-/**
- * Helper class with methods for adding attachments to allure report
- */
+
 public class AttachmentsHelper {
 
     @Attachment(value = "{attachName}", type = "text/plain")
@@ -37,15 +35,11 @@ public class AttachmentsHelper {
                 + "' type='video/mp4'></video></body></html>";
     }
 
-    /**
-     * Returns video url with given driver session id
-     * @param sessionId browser session id
-     */
     public static String getVideoUrl(String sessionId) {
         return getWebVideoUrl(sessionId);
     }
 
-    private static String getWebVideoUrl(String sessionId) {
+    public static String getWebVideoUrl(String sessionId) {
         try {
             return new URL(DriverHelper.getVideoUrl() + sessionId + ".mp4") + "";
         } catch (MalformedURLException e) {
@@ -53,4 +47,5 @@ public class AttachmentsHelper {
         }
         return null;
     }
+
 }

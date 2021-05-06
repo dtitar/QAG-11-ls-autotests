@@ -1,4 +1,4 @@
-package ru.ligastavok.autotests.pages;
+package ru.autotests.pages;
 
 import com.codeborne.selenide.SelenideElement;
 

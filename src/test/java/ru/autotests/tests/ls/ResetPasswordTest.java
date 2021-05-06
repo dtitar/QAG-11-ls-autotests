@@ -1,22 +1,21 @@
-package ru.ligastavok.autotests.tests;
+package ru.autotests.tests.ls;
 
 import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import ru.ligastavok.autotests.pages.LoginPage;
-import ru.ligastavok.autotests.pages.MainPage;
-import ru.ligastavok.autotests.pages.ResetPasswordPage;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.*;
+import ru.autotests.pages.LoginPage;
+import ru.autotests.pages.MainPage;
+import ru.autotests.pages.ResetPasswordPage;
+import ru.autotests.tests.TestBase;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-@DisplayName("Reset password scenarios")
-class ResetPasswordTest extends TestBase{
+@Story("Reset password scenarios")
+class ResetPasswordTest extends TestBase {
 
     MainPage mainPage = new MainPage();
     LoginPage loginPage = new LoginPage();
@@ -28,6 +27,7 @@ class ResetPasswordTest extends TestBase{
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Verifying presence of the reset password form elements")
     void testResetPasswordFormFields() {
@@ -67,6 +67,7 @@ class ResetPasswordTest extends TestBase{
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Failed reset password with invalid mobile phone")
     void testResetPasswordFormWithMobilePhoneInvalidData() {
@@ -90,6 +91,7 @@ class ResetPasswordTest extends TestBase{
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Failed reset password with invalid email")
     void testResetPasswordFormWithEmailInvalidData() {
@@ -115,11 +117,11 @@ class ResetPasswordTest extends TestBase{
     }
 
     @Test
+    @Tag("ui")
     @Owner("dtitar")
     @DisplayName("Reset password fields errors notifications")
     @Disabled("needs test case update")
     void testResetPasswordFormFieldsErrorNotifications() {
-        Faker fake = new Faker();
         String expectedMobilePhoneInputErrorMessageText = "Это поле обязательно к заполнению";
 
         step("Open reset password with mobile phone form", () -> {
