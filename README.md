@@ -57,6 +57,6 @@ https://www.ligastavok.ru/
 
 ## Ссылки
 ### Jenkins
-https://jenkins.autotests.cloud/job/C05-NastyaPru-HomeWork11
+https://jenkins.autotests.cloud/job/c05-dtitar-ls-autotests
 ### Allure reports
-https://jenkins.autotests.cloud/job/C05-NastyaPru-HomeWork11/6/allure/
+https://jenkins.autotests.cloud/job/c05-dtitar-ls-autotests/19/allure
